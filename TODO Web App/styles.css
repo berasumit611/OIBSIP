@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+  }
+body{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+  overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white;
+    background: rgb(28,40,133);
+background: linear-gradient(199deg, rgba(28,40,133,1) 0%, rgba(2,1,3,1) 100%);
+}
+header,main{
+    
+    max-width:500px;
+    width: 100%;
+    padding: 1rem 2rem;
+    /* margin:3rem auto 0; */
+    margin-top: 30px;
+    margin-left:30px;
+}
+h1,h2{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+input,button{
+    border: none;
+    outline: none;
+}
+#new-task-form{
+    display: flex;
+    gap: 1rem;
+}
+#new-task-input{
+    width: 90%;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+#new-task-submit{
+    
+    color: white;
+    background-color: orangered;
+    font-size: 3rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls{
+    
+    display: flex;
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid orangered;
+}
+
+.filters span{
+    margin:8px;
+    font-size: 17px;
+    color: #bdbdbd;
+    cursor: pointer;
+  }
+.filters span:first-child{
+    margin-left: 0;
+  }
+.filters span.active{
+    color: orangered;
+  }
+
+#tasks{
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 1rem;
+}
+#tasks h2{
+    display: visible;
+    font-size: 3rem;
+    font-weight: 300;
+    align-items: center;
+}
+.task{
+    
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+   
+    
+}
+#tasks{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 300px;
+    
+  }
+  #tasks::-webkit-scrollbar{
+    
+    width: 5px;
+  }
+  #tasks::-webkit-scrollbar-track{
+    background: transparent;
+    border-radius: 25px;
+  }
+  #tasks::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 25px;
+  }
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 78%;
+}
+.content i{
+    font-size: 2rem;
+}
+.task .content input{
+    width: 95%;
+    background-color: transparent;
+    color: white;
+    padding: 1rem;
+    font-size: 2rem;
+    
+    
+}
+.actions{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+}
+.edit,.delete{
+    background-color: transparent;
+
+    padding: 1rem;
+    cursor: pointer;
+}
+.edit{
+    color:rgb(48, 255, 48);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.delete{
+    font-size: 2rem;
+    color: #caff09;
+}
+.task .content input:not(:read-only){
+    color: #ebf377;
+}
+/* checked functionality-toggle */
+.checked{
+    font-style: italic;
+    text-decoration:1px solid rgb(255, 255, 255) line-through;
+}
+.color{
+    color: rgb(20, 221, 20);
+}
+
+/* footer */
+footer{
+    width: 100vw;
+    height: 25px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    color: black;
+    background-color: #bdbdbd;
+    font-size: 1.5rem;
+    
+}
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+    header,
+    main {
+      margin: 0;
+      padding: 2rem;
+    }
+    header{
+        margin-top: 30px;
+    }
+    
+    
+    #new-task-input{
+        width: 80%;
+        font-size: 1.6rem;
+    }
+    #new-task-submit {
+      font-size: 2.4rem;
+    }
+    
+    .controls {
+      padding: 10px;
+    }
+    
+    .filters span {
+      font-size: 14px;
+    }
+    
+    #tasks h2 {
+      font-size: 2.4rem;
+    }
+    .content{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+       
+    }
+
+    .task .content input {
+     
+      font-size: 1.6rem;
+    }
+    .actions{
+
+    width: 30%;
+}
+    .edit {
+      font-size: 1rem;
+    }
+    
+    .delete {
+      font-size: 1.6rem;
+    }
+    
+    
+    footer {
+      font-size: 1.2rem;
+    }
+  }
